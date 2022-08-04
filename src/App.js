@@ -8,11 +8,14 @@ import Routes from "./Components/Routes";
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
+
   return (
-    <div className={darkTheme? "dark" : " "}>
-      <Navbar />
-      <Routes />
-      <Footer />
+    <div className={darkTheme? "dark" : ""}>
+      <div className="bg-slate-200 dark:bg-slate-900 dark:text-slate-200 min-h-screen">
+        <Navbar />
+        <Routes />
+        <Footer />
+      </div>
     </div>
   );
 }
