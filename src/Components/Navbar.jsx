@@ -10,13 +10,15 @@ export default function Navbar({darkTheme, setDarkTheme}) {
                 <Link to="/">
                     <p className="text-2xl bg-blue-500 font-bold text-white py-1 px-2 rounded 
                                   dark:bg-slate-500 dark:text-slate-900">
-                        GoogL
+                        GoogL🔍
                     </p>
                 </Link>
                 <button type="button" 
                         onClick={() => setDarkTheme(!darkTheme)} 
-                        className="text-xl dark:bg-slate-50 dark:text-slate-900 bg-white border rounded-full px-2 py-1 hover:shadow-lg">
-                    {darkTheme? "Light" : "Dark"}
+                        className="text-xl bg-white border rounded-full
+                                   px-2 py-1 hover:shadow-lg
+                                   dark:bg-slate-50 dark:text-slate-900">
+                    {darkTheme? "Light💡" : "Dark🌑"}
                 </button>
             </div>
         </div>
