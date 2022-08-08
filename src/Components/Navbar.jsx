@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Search from  "./Search";
 
 export default function Navbar({darkTheme, setDarkTheme}) {
     return (
@@ -21,6 +22,7 @@ export default function Navbar({darkTheme, setDarkTheme}) {
                     {darkTheme? "Light💡" : "Dark🌑"}
                 </button>
             </div>
+            <Search />
         </div>
     )
 }
