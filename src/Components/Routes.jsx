@@ -5,9 +5,7 @@ export default function RoutEs() {
     return (
         <div className="p-4">
             <Routes>
-                <Route path="/">
-                    <Route path="/search" />
-                </Route>
+                <Route path="/" element={<Results />} />
                 <Route path="/search" element={<Results />} />
                 <Route path="/images" element={<Results />} />
                 <Route path="/news" element={<Results />} />
