@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import Routes from "./Components/Routes";
+import RoutEs from "./Components/RoutEs";
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -13,7 +13,7 @@ function App() {
     <div className={darkTheme? "dark" : ""}>
       <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-100 min-h-screen">
         <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
-        <Routes />
+        <RoutEs />
         <Footer />
       </div>
     </div>
