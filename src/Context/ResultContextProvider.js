@@ -34,3 +34,5 @@ export const ResultContextProvideer = ({ children }) => {
         </ResultContext.Provider>
     )
 };
+
+export const useResultContext = () => useContext(ResultContext);
