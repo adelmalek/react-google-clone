@@ -27,7 +27,7 @@ export default function Results() {
         case "/search":
             return (
                 <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
-                    {results?.results?.map( ({ link, title }, index ) => (
+                    {results?.map( ({ link, title }, index ) => (
                         <div key={index} className="w-full md:w-2/5">
                             <a href={link} target="_blank" rel="noreferrer">
                                 <p className="text-sm">
@@ -44,7 +44,7 @@ export default function Results() {
         case "/image":
             return (
                 <div className="flex flex-wrap justify-center items-center">
-                    {results?.image_results?.map( ({image, link: { href, title }}, index) => (
+                    {results?.map( ({image, link: { href, title }}, index) => (
                         <a key={index} className="p-5 sm:p-3" href={href} target="_blank" rel="noreferrer">
                             <img src={image?.src} alt={title} loading="lazy"/>
                             <p className="w-36 break-words text-sm mt-2">
@@ -55,7 +55,24 @@ export default function Results() {
                 </div>
             )
         case "/news":
-            return "SEARCH";
+            return (
+                <div className="flex flex-wrap justify-between space-y-6 items-center sm:px-56">
+                    {results?.map( ({links, id, source, title}) => (
+                        <div key={id} className="w-full md:w-2/5">
+                            <a className="hover:underline" href={links?.[0].href} target="_blank" rel="noreferrer">
+                                <p className="text-lg text-blue-700 dark:text-blue-300">
+                                    {title}
+                                </p>
+                            </a>
+                            <div className="flex gap-4">
+                                <a href={source?.href} target="_blank" rel="noreferrer">
+                                    {source.href}
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )
         case "/video":
             return "SEARCH";
         default:
