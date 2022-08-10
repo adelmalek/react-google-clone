@@ -10,8 +10,14 @@ export default function Results() {
     const location = useLocation();
 
     useEffect( () => {
-        getResults("/search/q=Friderikusz Podcast&num=20")
-    }, [])
+        if (searchTerm) {
+            if (location.pathname === "/video") {
+                getResults(`/search/q=${searchTerm} video`)
+            } else {
+                getResults(`${location.pathname}/q=${searchTerm}&num=20`)
+            }
+        }
+    }, [searchTerm, location.pathname])
 
     if (isLoading) {
         return <Loading />;
@@ -35,11 +41,22 @@ export default function Results() {
                     ))}
                 </div>
             )
-        case "/images":
-            return "SEARCH";
+        case "/image":
+            return (
+                <div className="flex flex-wrap justify-center items-center">
+                    {results?.image_results?.map( ({image, link: { href, title }}, index) => (
+                        <a key={index} className="p-5 sm:p-3" href={href} target="_blank" rel="noreferrer">
+                            <img src={image?.src} alt={title} loading="lazy"/>
+                            <p className="w-36 break-words text-sm mt-2">
+                                {title}
+                            </p>
+                        </a>
+                    ))}
+                </div>
+            )
         case "/news":
             return "SEARCH";
-        case "/videos":
+        case "/video":
             return "SEARCH";
         default:
             return "ERROR!";
