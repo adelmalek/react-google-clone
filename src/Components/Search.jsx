@@ -1,5 +1,10 @@
+import Links from "./Links";
+
 export default function Search() {
     return (
-        <div>Search</div>
+        <div>
+            Search
+            <Links />
+        </div>
     )
 }
