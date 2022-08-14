@@ -61,9 +61,8 @@ export default function Results() {
                                 </p>
                             </a>
                             <div className="flex gap-4">
-                                <a href={source?.href} target="_blank" rel="noreferrer">
-                                    {source.href}
-                                </a>
+                                {source?.href? 
+                                    <a href={source.href} target="_blank" rel="noreferrer">{source.href}</a> : null}
                             </div>
                         </div>
                     ))}
